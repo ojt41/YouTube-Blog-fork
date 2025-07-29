@@ -1,9 +1,0 @@
-jupyterlab
-ipywidgets
-beautifulsoup4
-transformers
-torch
-torchvision
-torchaudio
-ollama
-gradio

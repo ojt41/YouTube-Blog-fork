@@ -1,5 +1,0 @@
-# Requirements list for causal discovery example code
-
-cdt == 0.5.23
-networkx == 2.5
-matplotlib == 3.4.1

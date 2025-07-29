@@ -1,7 +1,0 @@
-jupyterlab
-ipykernel
-ipywidgets
-openai
-python-dotenv
-streamlit
-pandas
