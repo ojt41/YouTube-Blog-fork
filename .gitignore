@@ -161,3 +161,4 @@ cython_debug/
 
 # apple
 .DS_Store
+agents/1-tool_use/.vscode/mcp.json

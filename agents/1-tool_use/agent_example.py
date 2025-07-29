@@ -37,17 +37,18 @@ def fetch_youtube_transcript(url: str) -> str:
     video_id = video_id_match.group(1)
     
     try:
-        transcript = YouTubeTranscriptApi.get_transcript(video_id)
+        ytt_api = YouTubeTranscriptApi()
+        fetched_transcript = ytt_api.fetch(video_id)
         
         # Format each entry with timestamp and text
         formatted_entries = []
-        for entry in transcript:
+        for snippet in fetched_transcript:
             # Convert seconds to MM:SS format
-            minutes = int(entry['start'] // 60)
-            seconds = int(entry['start'] % 60)
+            minutes = int(snippet.start // 60)
+            seconds = int(snippet.start % 60)
             timestamp = f"[{minutes:02d}:{seconds:02d}]"
             
-            formatted_entry = f"{timestamp} {entry['text']}"
+            formatted_entry = f"{timestamp} {snippet.text}"
             formatted_entries.append(formatted_entry)
         
         # Join all entries with newlines
